@@ -368,6 +368,101 @@ a:focus {
   width: 500px;
 }
 
+
+.top-content{
+  background-color: rgb(238, 238, 238);
+  width: 90%;
+  margin: 0 auto 20px auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px lightgray ;
+}
+label{
+  display: inline-block;
+  height: 100%;
+  margin: 0 20px;
+  line-height: 60px;
+  font-size: 18px;
+  color :gray;
+  cursor:  pointer;
+  transition: color .5s;
+}
+label:hover{
+  color: black;
+}
+.project-gallery{
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 20px;
+}
+.pro{
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px lightgray;
+  cursor: pointer;
+}
+.pro img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.pro::before{
+  content:"More Info" ;
+  position:absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  width: 100%;
+  margin-top: -100px;
+  opacity: 0;
+  transition: .3s;
+  transition-delay: 0.2s;
+  z-index: 1;
+}
+.pro:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left:0;
+  border-radius: 10px;
+ 
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: .3s;
+} 
+.pro:hover::after{
+  height: 100%;
+}
+.pro:hover::before{
+  margin-top: 0;
+  opacity: 1;
+}
+#Check1:checked ~.A1 .project-gallery .pro{
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+
+}
+#Check2:checked ~.A1 .project-gallery .vr{
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+
+}
+#Check2:checked ~.project-gallery .threeD{
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+
+}
 /*---------------------------
 ## Responsive
 ---------------------------*/
